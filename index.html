@@ -5,8 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        a,a:hover{
+            text-decoration: none;
+        }
+        .close{
+            display: none;
+        }
+        .open{
+            display: none;
+        }
+        .active{
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    
+    <div style="display:flex;align-items:center;justify-content:center;min-height: 100vh;width:100%">
+        <a href="#" class="emoji close active" style="font-size: 60px;"> 🙈</a>
+        <a href="#" class="emoji open" style="font-size: 60px;"> 🐵</a>
+    </div>
+    <script>
+        const openFace = document.querySelector(".open");
+        
+        const closeFace = document.querySelector(".close");
+
+        closeFace.addEventListener('click',() =>{
+            if (openFace.classList.contains("open")){
+                openFace.classList.add("active");
+                closeFace.classList.remove("active")
+            }
+        })
+
+
+        
+        openFace.addEventListener('click',() =>{
+            if (closeFace.classList.contains("close")){
+                openFace.classList.remove("active");
+                closeFace.classList.add("active")
+            }
+        })
+
+        
+     
+    </script>
 </body>
 </html>
